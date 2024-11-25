@@ -17,6 +17,10 @@ connectDB();
 // Start Monitoring
 startMonitoring();
 
+app.get("/",(req,res)=>{
+    res.send("API HOME")
+})
+
 // Start the Server
 const PORT = process.env.PORT || 6000;
 app.listen(PORT, () => console.log(`Monitoring server running on port ${PORT}`));
