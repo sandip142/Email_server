@@ -2,12 +2,12 @@ const express = require('express');
 const connectDB = require('../config/db');
 const subscriptionRoutes = require('../routes/subscriptionRoutes');
 const { startMonitoring } = require('../services/monitoringService');
-
+const cors = require('cors');
 const app = express();
 
 // Middleware
 app.use(express.json());
-
+app.use(cors());
 // Routes
 app.use('/api/subscriptions', subscriptionRoutes);
 
