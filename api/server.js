@@ -4,10 +4,10 @@ const subscriptionRoutes = require('../routes/subscriptionRoutes');
 const { startMonitoring } = require('../services/monitoringService');
 const cors = require('cors');
 const app = express();
-
+app.use(cors());
 // Middleware
 app.use(express.json());
-app.use(cors());
+
 // Routes
 app.use('/api/subscriptions', subscriptionRoutes);
 
